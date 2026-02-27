@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "App for packed drinking water in glass bottle business — likely a product/inventory or ordering app for bottled water.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Bright hero banner with clear glass water bottles arranged neatly on a white surface with light aqua water droplets and subtle light reflections (hero-banner.dim_1200x400.png)\n- Single clear glass water bottle with clean label, crisp water inside, on a white background with soft shadow (bottle-illustration.dim_400x400.png)",
+  "existing_features": [
+    {
+      "id": "feature-build-a-frontend-product-catalog-page-that-displays-all-available-packed-drinking-water-glass-bottle-products-in-a-card-grid-each-card-shows-the-bottle-image-name-volume-price-and-stock-level-with-an-add-to-order-button",
+      "title": "Build a frontend product catalog page that displays all available packed drinking water glass bottle products in a card grid. Each card shows the bottle image, name, volume, price, and stock level with an 'Add to Order' button.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-frontend-order-placement-flow-with-a-cart-order-summary-panel-users-can-adjust-quantities-enter-customer-name-and-contact-and-submit-the-order-show-a-success-confirmation-after-placement",
+      "title": "Build a frontend order placement flow with a cart/order summary panel. Users can adjust quantities, enter customer name and contact, and submit the order. Show a success confirmation after placement.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-frontend-admin-dashboard-with-two-tabs-products-add-edit-delete-products-and-manage-stock-and-orders-list-all-orders-filter-by-status-and-update-order-status-protect-admin-actions-with-a-simple-admin-mode-toggle",
+      "title": "Build a frontend admin dashboard with two tabs: Products (add/edit/delete products and manage stock) and Orders (list all orders, filter by status, and update order status). Protect admin actions with a simple admin mode toggle.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-clean-fresh-visual-theme-inspired-by-pure-water-and-glass-use-a-crisp-white-and-light-aqua-teal-color-palette-minimal-sans-serif-typography-soft-shadows-and-subtle-glass-like-card-effects-maintain-this-theme-consistently-across-all-pages",
+      "title": "Apply a clean, fresh visual theme inspired by pure water and glass — use a crisp white and light aqua/teal color palette, minimal sans-serif typography, soft shadows, and subtle glass-like card effects. Maintain this theme consistently across all pages.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-generated-product-hero-image-and-bottle-illustration-as-static-assets-from-frontend-public-assets-generated-and-use-them-on-the-landing-product-pages",
+      "title": "Render the generated product hero image and bottle illustration as static assets from frontend/public/assets/generated and use them on the landing/product pages.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a backend actor that manages a product catalog of packed drinking water glass bottle products, each with fields: id, name, description, volume (ml), pricePerUnit, stockQuantity, and isAvailable. Provide functions to add, update, delete, and list products.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Create a backend order management system. Each order includes: orderId, customerName, customerContact, items (array of productId + quantity), totalPrice, status (pending/confirmed/delivered/cancelled), and createdAt timestamp. Provide functions to place an order, update order status, and list all orders.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Glass Bottle Water",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

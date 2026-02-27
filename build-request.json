@@ -1,0 +1,153 @@
+{
+  "kind": "build_request",
+  "title": "Packed Drinking Water in Glass Bottle — Product & Order Management App",
+  "projectName": "AquaBottle",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a backend actor that manages a product catalog of packed drinking water glass bottle products, each with fields: id, name, description, volume (ml), pricePerUnit, stockQuantity, and isAvailable. Provide functions to add, update, delete, and list products.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "packed drinking water in glass bottle"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Products can be created with all required fields.",
+        "Products can be retrieved as a list.",
+        "Products can be updated (price, stock, availability).",
+        "Products can be deleted by ID."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Create a backend order management system. Each order includes: orderId, customerName, customerContact, items (array of productId + quantity), totalPrice, status (pending/confirmed/delivered/cancelled), and createdAt timestamp. Provide functions to place an order, update order status, and list all orders.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "packed drinking water in glass bottle"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A new order can be placed referencing existing products.",
+        "Stock quantity decreases when an order is placed.",
+        "Order status can be updated.",
+        "All orders can be listed and filtered by status."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build a frontend product catalog page that displays all available packed drinking water glass bottle products in a card grid. Each card shows the bottle image, name, volume, price, and stock level with an 'Add to Order' button.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "packed drinking water in glass bottle"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Product cards render for all available products.",
+        "Each card shows name, volume, price per unit, and stock level.",
+        "Out-of-stock products are visually indicated as unavailable.",
+        "Clicking 'Add to Order' adds the item to the current order draft."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build a frontend order placement flow with a cart/order summary panel. Users can adjust quantities, enter customer name and contact, and submit the order. Show a success confirmation after placement.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "packed drinking water in glass bottle"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Cart shows selected products, quantities, and computed total price.",
+        "Quantities can be increased, decreased, or removed.",
+        "Customer name and contact fields are required before submission.",
+        "Successful order submission shows a confirmation message with the order ID."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Build a frontend admin dashboard with two tabs: Products (add/edit/delete products and manage stock) and Orders (list all orders, filter by status, and update order status). Protect admin actions with a simple admin mode toggle.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "packed drinking water in glass bottle"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Products tab allows adding a new product via a form.",
+        "Existing products can be edited and deleted.",
+        "Orders tab lists all orders with status badges.",
+        "Order status can be updated from the orders list.",
+        "Admin mode toggle gates access to the dashboard."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Apply a clean, fresh visual theme inspired by pure water and glass — use a crisp white and light aqua/teal color palette, minimal sans-serif typography, soft shadows, and subtle glass-like card effects. Maintain this theme consistently across all pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages share a consistent color palette of white, light aqua, and teal accents.",
+        "Typography is clean and modern throughout.",
+        "Cards and modals use subtle glass-like styling (light transparency, soft borders).",
+        "No inconsistent or clashing color blocks across pages."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Render the generated product hero image and bottle illustration as static assets from frontend/public/assets/generated and use them on the landing/product pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero banner image is displayed on the landing/product catalog page.",
+        "Glass bottle illustration appears on product cards."
+      ]
+    }
+  ],
+  "constraints": [
+    "All backend logic must reside in a single Motoko actor in backend/main.mo.",
+    "Do not use any external database or cloud service.",
+    "Do not edit files under frontend/src/hooks/ or frontend/src/components/ui."
+  ],
+  "nonGoals": [
+    "User authentication or Internet Identity login.",
+    "Payment processing or e-commerce checkout.",
+    "Real-time order tracking or push notifications.",
+    "Multi-vendor or marketplace features.",
+    "Mobile app version."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Bright hero banner with clear glass water bottles arranged neatly on a white surface with light aqua water droplets and subtle light reflections (hero-banner.dim_1200x400.png)",
+      "Single clear glass water bottle with clean label, crisp water inside, on a white background with soft shadow (bottle-illustration.dim_400x400.png)"
+    ],
+    "edits": []
+  }
+}

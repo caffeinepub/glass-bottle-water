@@ -1,0 +1,113 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-build-a-frontend-product-catalog-page-that-displays-all-available-packed-drinking-water-glass-bottle-products-in-a-card-grid-each-card-shows-the-bottle-image-name-volume-price-and-stock-level-with-an-add-to-order-button",
+      "featureTitle": "Build a frontend product catalog page that displays all available packed drinking water glass bottle products in a card grid. Each card shows the bottle image, name, volume, price, and stock level with an 'Add to Order' button.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/context/CartContext.tsx",
+        "frontend/src/pages/ProductCatalog.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-frontend-order-placement-flow-with-a-cart-order-summary-panel-users-can-adjust-quantities-enter-customer-name-and-contact-and-submit-the-order-show-a-success-confirmation-after-placement",
+      "featureTitle": "Build a frontend order placement flow with a cart/order summary panel. Users can adjust quantities, enter customer name and contact, and submit the order. Show a success confirmation after placement.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/CartSummary.tsx",
+        "frontend/src/pages/Checkout.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-frontend-admin-dashboard-with-two-tabs-products-add-edit-delete-products-and-manage-stock-and-orders-list-all-orders-filter-by-status-and-update-order-status-protect-admin-actions-with-a-simple-admin-mode-toggle",
+      "featureTitle": "Build a frontend admin dashboard with two tabs: Products (add/edit/delete products and manage stock) and Orders (list all orders, filter by status, and update order status). Protect admin actions with a simple admin mode toggle.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/OrderManagement.tsx",
+        "frontend/src/components/ProductFormModal.tsx",
+        "frontend/src/components/ProductManagement.tsx",
+        "frontend/src/pages/AdminDashboard.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-clean-fresh-visual-theme-inspired-by-pure-water-and-glass-use-a-crisp-white-and-light-aqua-teal-color-palette-minimal-sans-serif-typography-soft-shadows-and-subtle-glass-like-card-effects-maintain-this-theme-consistently-across-all-pages",
+      "featureTitle": "Apply a clean, fresh visual theme inspired by pure water and glass — use a crisp white and light aqua/teal color palette, minimal sans-serif typography, soft shadows, and subtle glass-like card effects. Maintain this theme consistently across all pages.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-the-generated-product-hero-image-and-bottle-illustration-as-static-assets-from-frontend-public-assets-generated-and-use-them-on-the-landing-product-pages",
+      "featureTitle": "Render the generated product hero image and bottle illustration as static assets from frontend/public/assets/generated and use them on the landing/product pages.",
+      "files": [
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/pages/ProductCatalog.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

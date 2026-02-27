@@ -1,0 +1,166 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Packed Drinking Water Glass Bottle Product & Order Management Frontend",
+  "requirements": [
+    {
+      "id": "REQ-3",
+      "summary": "Build product catalog page displaying packed drinking water glass bottle products in a card grid with add-to-order functionality",
+      "acceptanceCriteria": [
+        "Product cards render for all available products.",
+        "Each card shows name, volume, price per unit, and stock level.",
+        "Out-of-stock products are visually indicated as unavailable.",
+        "Clicking 'Add to Order' adds the item to the current order draft."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ProductCatalog.tsx",
+          "operation": "create",
+          "description": "Create product catalog page that fetches products via backend.listProducts(), displays them in a responsive card grid, shows bottle image from frontend/public/assets/generated/bottle-illustration.dim_400x400.png, presents name/volume/price/stock for each product, visually indicates out-of-stock items, and provides 'Add to Order' button that adds selected product to order draft state managed by cart context or local state."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "create",
+          "description": "Create reusable product card component displaying glass bottle product with image, name, volume (ml), price per unit, stock quantity, availability badge, and 'Add to Order' button that emits click event to parent with product details. Apply glass-like card styling with soft shadows and light transparency."
+        },
+        {
+          "path": "frontend/src/context/CartContext.tsx",
+          "operation": "create",
+          "description": "Create cart context provider managing order draft state including selected products array with productId and quantity, methods to add item, remove item, update quantity, clear cart, and compute total price. Expose cart state and methods via React context."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap app with CartContext provider and add route for /products pointing to ProductCatalog page. Ensure navigation links include product catalog."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Build order placement flow with cart summary panel, quantity adjustment, customer form, and order submission with success confirmation",
+      "acceptanceCriteria": [
+        "Cart shows selected products, quantities, and computed total price.",
+        "Quantities can be increased, decreased, or removed.",
+        "Customer name and contact fields are required before submission.",
+        "Successful order submission shows a confirmation message with the order ID."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Checkout.tsx",
+          "operation": "create",
+          "description": "Create checkout page displaying cart summary with product list, quantity controls (increase/decrease/remove), computed total price, customer form (name and contact fields with validation), and submit button. On submission, call backend.placeOrder() with generated orderId, customer details, and items array. Show success confirmation with order ID after successful placement."
+        },
+        {
+          "path": "frontend/src/components/CartSummary.tsx",
+          "operation": "create",
+          "description": "Create cart summary component rendering list of selected products with name, quantity controls (plus/minus buttons and remove action), unit price, and line total. Display computed total price at bottom. Integrate with cart context for state updates."
+        },
+        {
+          "path": "frontend/src/components/OrderConfirmation.tsx",
+          "operation": "create",
+          "description": "Create order confirmation component displaying success message, generated order ID, customer details, and order summary. Include button to return to product catalog or view orders."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /checkout pointing to Checkout page and route for /order-confirmation pointing to OrderConfirmation page. Wire navigation from product catalog to checkout."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Build admin dashboard with Products and Orders tabs for managing product catalog and order status, protected by admin mode toggle",
+      "acceptanceCriteria": [
+        "Products tab allows adding a new product via a form.",
+        "Existing products can be edited and deleted.",
+        "Orders tab lists all orders with status badges.",
+        "Order status can be updated from the orders list.",
+        "Admin mode toggle gates access to the dashboard."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AdminDashboard.tsx",
+          "operation": "create",
+          "description": "Create admin dashboard page with tab navigation (Products and Orders). Products tab displays product list with edit/delete actions and 'Add Product' button opening form modal. Orders tab displays order list with status badges and status update dropdown. Wrap entire dashboard with admin mode guard checking local state toggle."
+        },
+        {
+          "path": "frontend/src/components/ProductManagement.tsx",
+          "operation": "create",
+          "description": "Create product management component for Products tab displaying table of all products fetched via backend.listProducts() with edit and delete icons per row. Include 'Add Product' button that opens ProductFormModal. Handle edit click by opening modal with pre-filled product data."
+        },
+        {
+          "path": "frontend/src/components/ProductFormModal.tsx",
+          "operation": "create",
+          "description": "Create product form modal component with fields for id, name, description, volume, pricePerUnit, stockQuantity, and isAvailable checkbox. Support both add and edit modes. On submit, call backend.addProduct() for new products or backend.updateProduct() for existing products. Close modal and refresh product list on success."
+        },
+        {
+          "path": "frontend/src/components/OrderManagement.tsx",
+          "operation": "create",
+          "description": "Create order management component for Orders tab displaying table of all orders fetched via backend.listOrders() with columns for orderId, customerName, customerContact, items summary, totalPrice, status badge, and createdAt timestamp. Include status dropdown per row to update order status via backend.updateOrderStatus(). Refresh list after status update."
+        },
+        {
+          "path": "frontend/src/components/AdminModeToggle.tsx",
+          "operation": "create",
+          "description": "Create admin mode toggle component (switch or button) stored in local state or context that controls visibility of admin dashboard. Display toggle in app header or navigation bar."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /admin pointing to AdminDashboard page. Include AdminModeToggle in main layout header. Wire navigation link to admin dashboard visible only when admin mode is enabled."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Apply clean, fresh visual theme inspired by pure water and glass with crisp white, light aqua/teal palette, minimal typography, soft shadows, and glass-like card effects",
+      "acceptanceCriteria": [
+        "All pages share a consistent color palette of white, light aqua, and teal accents.",
+        "Typography is clean and modern throughout.",
+        "Cards and modals use subtle glass-like styling (light transparency, soft borders).",
+        "No inconsistent or clashing color blocks across pages."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define global CSS custom properties for water-inspired theme including --color-water-light (light aqua), --color-water-primary (teal), --color-bg-white (crisp white), and shadow/border variables. Set base body background to white and default text color to dark gray. Apply clean sans-serif font family (Inter or similar) globally."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with custom colors for water-light, water-primary, and bg-white. Configure glass-like utility classes for cards (backdrop-blur, light transparency, soft border). Ensure consistent typography scale and spacing."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create layout component wrapping all pages with consistent header (app name, navigation, admin toggle), main content area with white background, and footer. Apply theme colors to header and footer. Use this layout as wrapper in App.tsx routes."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap all routes with Layout component to ensure consistent theme application across product catalog, checkout, admin dashboard, and confirmation pages."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Render generated product hero image and bottle illustration as static assets from frontend/public/assets/generated on landing and product pages",
+      "acceptanceCriteria": [
+        "Hero banner image is displayed on the landing/product catalog page.",
+        "Glass bottle illustration appears on product cards."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ProductCatalog.tsx",
+          "operation": "modify",
+          "description": "Add hero banner section at top of product catalog page displaying frontend/public/assets/generated/hero-banner.dim_1200x400.png as background or img element with alt text describing clear glass water bottles. Position banner above product card grid."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Update ProductCard component to display frontend/public/assets/generated/bottle-illustration.dim_400x400.png as the product image with alt text describing single clear glass water bottle. Ensure image scales responsively within card layout."
+        }
+      ]
+    }
+  ]
+}

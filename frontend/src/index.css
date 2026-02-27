@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Water-inspired palette */
+    --background: 0.98 0.008 210;
+    --foreground: 0.18 0.025 230;
+
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.025 230;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.025 230;
+
+    --primary: 0.52 0.14 210;
+    --primary-foreground: 0.99 0 0;
+
+    --secondary: 0.92 0.04 210;
+    --secondary-foreground: 0.3 0.08 220;
+
+    --muted: 0.94 0.02 210;
+    --muted-foreground: 0.52 0.04 220;
+
+    --accent: 0.88 0.07 195;
+    --accent-foreground: 0.22 0.08 220;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.03 210;
+    --input: 0.88 0.03 210;
+    --ring: 0.52 0.14 210;
+
+    --chart-1: 0.52 0.14 210;
+    --chart-2: 0.6 0.12 185;
+    --chart-3: 0.65 0.1 165;
+    --chart-4: 0.7 0.08 200;
+    --chart-5: 0.75 0.06 215;
+
+    --sidebar: 0.96 0.015 210;
+    --sidebar-foreground: 0.18 0.025 230;
+    --sidebar-primary: 0.52 0.14 210;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.92 0.04 210;
+    --sidebar-accent-foreground: 0.3 0.08 220;
+    --sidebar-border: 0.88 0.03 210;
+    --sidebar-ring: 0.52 0.14 210;
+
+    /* Custom water tokens */
+    --water-light: oklch(0.88 0.07 195);
+    --water-primary: oklch(0.52 0.14 210);
+    --water-deep: oklch(0.38 0.12 225);
+    --water-surface: oklch(0.96 0.025 205);
+    --glass-bg: oklch(1 0 0 / 0.7);
+    --glass-border: oklch(0.88 0.05 205 / 0.5);
+  }
+
+  .dark {
+    --background: 0.12 0.025 225;
+    --foreground: 0.94 0.01 210;
+
+    --card: 0.16 0.025 225;
+    --card-foreground: 0.94 0.01 210;
+
+    --popover: 0.18 0.025 225;
+    --popover-foreground: 0.94 0.01 210;
+
+    --primary: 0.62 0.14 205;
+    --primary-foreground: 0.1 0.02 225;
+
+    --secondary: 0.22 0.03 225;
+    --secondary-foreground: 0.88 0.01 210;
+
+    --muted: 0.22 0.03 225;
+    --muted-foreground: 0.62 0.04 215;
+
+    --accent: 0.28 0.06 210;
+    --accent-foreground: 0.88 0.01 210;
+
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+
+    --border: 1 0 0 / 10%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.62 0.14 205;
+
+    --sidebar: 0.16 0.025 225;
+    --sidebar-foreground: 0.94 0.01 210;
+    --sidebar-primary: 0.62 0.14 205;
+    --sidebar-primary-foreground: 0.1 0.02 225;
+    --sidebar-accent: 0.22 0.03 225;
+    --sidebar-accent-foreground: 0.88 0.01 210;
+    --sidebar-border: 1 0 0 / 10%;
+    --sidebar-ring: 0.62 0.14 205;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .water-gradient {
+    background: linear-gradient(135deg, oklch(0.88 0.07 195), oklch(0.72 0.12 210));
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, oklch(0.42 0.14 215), oklch(0.58 0.16 195));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}

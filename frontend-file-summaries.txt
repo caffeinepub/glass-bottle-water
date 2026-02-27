@@ -1,0 +1,18 @@
+{
+  "frontend/src/index.css": "Global styles with water-inspired OKLCH color palette (aqua/teal), Plus Jakarta Sans + DM Sans fonts, glass-card utility classes, and water gradient helpers.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with custom water color tokens, display/sans font families, glass shadow utilities, float/shimmer animations, and additional border-radius values.",
+  "frontend/src/context/CartContext.tsx": "React context provider managing cart state (items, quantities, total price) with add/remove/update/clear methods exposed via useCart hook.",
+  "frontend/src/context/AdminContext.tsx": "Lightweight React context providing admin mode toggle state (isAdmin boolean + toggleAdmin function) via useAdmin hook.",
+  "frontend/src/hooks/useQueries.ts": "All React Query hooks for backend integration — useListProducts, useAddProduct, useUpdateProduct, useDeleteProduct, useListOrders, usePlaceOrder, useUpdateOrderStatus.",
+  "frontend/src/lib/utils.ts": "Utility helpers: cn (class merging), formatPrice (bigint cents to USD string), generateOrderId (unique order ID), formatDate (nanoseconds to readable date).",
+  "frontend/src/components/Layout.tsx": "App shell with sticky header (logo, nav links, admin toggle switch), responsive mobile nav, and footer with attribution link.",
+  "frontend/src/components/ProductCard.tsx": "Responsive product card showing bottle illustration, name, volume, stock, availability badge, price, and Add to Order button with cart quantity indicator.",
+  "frontend/src/components/CartSummary.tsx": "Cart summary component rendering items with quantity controls (plus/minus/remove), line totals, and grand total using cart context.",
+  "frontend/src/components/ProductFormModal.tsx": "Dialog modal for adding/editing products with validated form fields (id, name, description, volume, price, stock, availability) and mutation integration.",
+  "frontend/src/components/ProductManagement.tsx": "Admin products tab with sortable table, edit/delete actions (with confirmation dialog), and Add Product button opening ProductFormModal.",
+  "frontend/src/components/OrderManagement.tsx": "Admin orders tab with table showing all orders, customer info, item count, total, date, and inline status update select dropdown.",
+  "frontend/src/pages/ProductCatalog.tsx": "Main product listing page with hero banner image, search input, availability filters, responsive product card grid, and loading/empty states.",
+  "frontend/src/pages/Checkout.tsx": "Checkout page with cart summary panel, customer name/contact form with validation, order placement mutation, and success confirmation screen with order ID.",
+  "frontend/src/pages/AdminDashboard.tsx": "Admin dashboard with Products and Orders tabs, guarded by admin mode check with enable-admin prompt for unauthorized access.",
+  "frontend/src/App.tsx": "Root app component setting up TanStack Router with three routes (/,/checkout,/admin), wrapped in AdminProvider and CartProvider with shared Layout."
+}
